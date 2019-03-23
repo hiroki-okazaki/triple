@@ -1,0 +1,11 @@
+ja:
+  users:
+    new:
+      title: 新規登録
+    show:
+      name: 名前
+      age: 年齢
+      gender: 性別
+      profile: 自己紹介
+      edit: 編集
+      return: 戻る
