@@ -16,8 +16,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.all(user_params)
-    if @book.save
+    @user = User.new(user_params)
+    if @user.save
       redirect_to @user, notice: "登録が完了致しました"
     else
       render :new
