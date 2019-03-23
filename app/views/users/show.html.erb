@@ -1,14 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="col-md-10 offset-md-1 mt-5">
+  <h2><%= @user.name %></h2>
+  <hr>
+  <h3>自己紹介</h3>
+  <%= simple_format @user.profile %>
+</div>
