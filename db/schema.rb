@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2019_03_21_084715) do
 
   create_table "prefectures", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,14 +27,14 @@ ActiveRecord::Schema.define(version: 2019_03_21_084715) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "email", null: false
-    t.integer "gender", null: false
-    t.integer "age", null: false
+    t.string "name"
+    t.string "email"
+    t.integer "gender"
+    t.integer "age"
     t.integer "region_id_id"
     t.boolean "supporter_flg"
     t.boolean "tripper_flg"
-    t.text "profile", null: false
+    t.text "profile"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["region_id_id"], name: "index_users_on_region_id_id"
