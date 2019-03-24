@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_24_034422) do
+ActiveRecord::Schema.define(version: 2019_03_24_111829) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -37,6 +37,29 @@ ActiveRecord::Schema.define(version: 2019_03_24_034422) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "registrants", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "name"
+    t.string "nick_name"
+    t.integer "gender"
+    t.integer "age"
+    t.integer "region_id_id"
+    t.boolean "supporter_flg"
+    t.boolean "tripper_flg"
+    t.text "profile"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "prefecture_id"
+    t.index ["email"], name: "index_registrants_on_email", unique: true
+    t.index ["prefecture_id"], name: "index_registrants_on_prefecture_id"
+    t.index ["region_id_id"], name: "index_registrants_on_region_id_id"
+    t.index ["reset_password_token"], name: "index_registrants_on_reset_password_token", unique: true
   end
 
   create_table "schedules", force: :cascade do |t|
