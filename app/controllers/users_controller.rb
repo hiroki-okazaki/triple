@@ -7,12 +7,8 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-
   def new
     @user = User.new
-  end
-
-  def edit
   end
 
   def create
@@ -23,21 +19,30 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
+  
   def show
     @users = User.find(params[:id])
   end
+  
+  def edit
+    @user = User.find(params[:id])
+  end
 
   def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to @user, notice: "登録情報を更新しました。"
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @user = User.find(params[:id])
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to users_path, notice: "登録情報を削除しました。"
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

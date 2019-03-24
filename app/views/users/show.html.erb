@@ -1,6 +1,41 @@
 <div class="col-md-10 offset-md-1 mt-5">
-  <h2><%= @user.name %></h2>
-  <hr>
-  <h3><%= t ".profile" %></h3>
-  <%= simple_format @user.profile %>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <%= show_user_image(@user) %>
+    </div>
+      <hr>
+    <div class="col-md-8">
+        <h2><b> 名前: </b><%= @user.name %></h2>
+      <ul>
+        <li><b> 年齢: </b><%= @user.age %></li>
+        <li><b> 現住地: </b><%= @user.region %></li>
+      </ul>
+    </div>
+    </div>
+      <hr>
+      <h4><%= "profile" %></h4>
+      <%= simple_format @user.profile %>
+      <%= link_to "編集", edit_user_path(@user), class: "btn btn-primary" %>
+      <%= button_tag "削除", class: "btn btn-warning", data: { toggle: "modal", target: "#delete-user" } %>
+      <%= link_to "戻る", user_path, class: "btn btn-secondary" %>
+    </div>
+
+<div class="modal fade" id="delete-user">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">登録削除</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><%= "%{user}を削除しますか？" %> @user.name </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+        <%= link_to t(".delete_action"), user_path(@user), method: :delete, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
 </div>
