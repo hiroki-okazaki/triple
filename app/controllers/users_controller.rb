@@ -21,15 +21,12 @@ class UsersController < ApplicationController
   end
   
   def show
-    @users = User.find(params[:id])
   end
   
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to @user, notice: "登録情報を更新しました。"
     else
@@ -52,6 +49,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :age, :region, :profile, :new_image)
+      params.require(:user).permit(:name, :age, :region, :profile, :new_image, :prefecture_id)
     end
 end

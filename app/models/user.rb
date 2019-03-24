@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  belongs_to :prefecture
   has_one_attached :image
   attribute :region
   attribute :new_image
