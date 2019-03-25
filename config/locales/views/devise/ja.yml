@@ -1,0 +1,12 @@
+ja:
+  devise:
+    registrants:
+      new:
+        name:
+        nick_name:
+        gender:
+        age:
+        avatar:
+        prefecture_id: 現住所
+        submit: 新規登録
+        minimum_password_length: "%{length} 文字以上を入力して下さい"

@@ -33,12 +33,12 @@ class DeviseCreateRegistrants < ActiveRecord::Migration[5.2]
       # t.datetime :locked_at
       t.string :name
       t.string :nick_name
-      t.integer  :gender
-      t.integer  :age
-      t.references  :region_id
-      t.boolean  :supporter_flg
-      t.boolean  :tripper_flg
-      t.text     :profile
+      t.integer :gender
+      t.integer :age
+      t.references :region_id
+      t.boolean :supporter_flg
+      t.boolean :tripper_flg
+      t.text :profile
 
       t.timestamps null: false
     end

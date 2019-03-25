@@ -5,4 +5,5 @@ class Registrant < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one_attached :avatar
   belongs_to :prefecture
+  attribute :prefecture
 end
