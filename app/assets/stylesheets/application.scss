@@ -13,9 +13,20 @@
  */
 @import "bootstrap";
 
-
 .user-box {
   padding: 30px;
   border: 1px solid #dcdcdc;
   background-color: #f8f8ff;
+}
+
+.jumbotron {
+  // padding: 200px 0 100px;
+  text-align: center;
+  // position: absolute;
+  background: url("chibakanko06-2.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 600px;
+  width: 100%;
+  color: orange;
 }

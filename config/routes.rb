@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home' => "home#top"
+  get "about" => "home#about"
   devise_for :registrants
   resources :users
   root "users#index"
