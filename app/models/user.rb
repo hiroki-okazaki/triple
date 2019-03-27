@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  belongs_to :prefecture
+  # belongs_to :prefecture
   has_one_attached :image
-  attribute :prefecture
+  # attribute :prefecture 
   attribute :new_image
 
   validates :name, presence: true, length: { maximum: 30 }
